@@ -1,9 +1,9 @@
 import React from 'react';
 
 function GuessResults() {
-  return <div class="guess-results">
-  <p className="guess">FIRST</p>
-  <p className="guess">GUESS</p>
+  return <div className="guess-results">
+  <p className="guess"></p>
+  <p className="guess"></p>
 </div>
 
 }
