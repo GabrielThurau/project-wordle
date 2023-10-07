@@ -1,14 +1,14 @@
 import React from 'react';
 
 function GuessInput({ handleSubmitGuess }) {
-  const [guess, setGuess] = React.useState('');
+  const [tentativeGuess, setTentativeGuess] = React.useState('');
 
   function handleSubmit(e) {
     e.preventDefault();
 
-    handleSubmitGuess(guess);
+    handleSubmitGuess(tentativeGuess);
 
-    setGuess('');
+    setTentativeGuess('');
   }
 
   // const handleChange = (e) => {
@@ -26,9 +26,9 @@ function GuessInput({ handleSubmitGuess }) {
   title="5 letter word"
   id="guess-input" 
   type="text" 
-  value={guess} 
+  value={tentativeGuess} 
   onChange={(event) => {
-    setGuess(event.target.value.toUpperCase());
+    setTentativeGuess(event.target.value.toUpperCase());
   }}/>
 </form>
   )

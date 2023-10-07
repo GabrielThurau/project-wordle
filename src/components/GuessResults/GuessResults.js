@@ -1,11 +1,14 @@
 import React from 'react';
 
-function GuessResults() {
-  return <div className="guess-results">
-  <p className="guess"></p>
-  <p className="guess"></p>
-</div>
-
+function GuessResults( {guesses} ) {
+  return (
+<div className="guess-results">
+  {guesses.map( (guess, index) => (
+<p className="guess" key={index}>{guess}</p>
+  ))}
+  </div>
+  );
+  
 }
 
 export default GuessResults;
