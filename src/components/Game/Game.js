@@ -4,9 +4,8 @@ import { sample } from '../../utils';
 import { WORDS } from '../../data';
 import GuessInput from '../GuessInput';
 import GuessResults from '../GuessResults';
-import GameOverBanner from '../GameOverBanner';
-
-
+import WonBanner from '../WonBanner'
+import LostBanner from '../LostBanner'
 
 import { NUM_OF_GUESSES_ALLOWED } from '../../constants';
 
@@ -34,11 +33,13 @@ function Game() {
   }
 
   return <>
-  {gameStatus}
   <GuessResults  guesses={guesses} answer={answer} />
   <GuessInput handleSubmitGuess={handleSubmitGuess} gameStatus={gameStatus} />
-  {gameStatus !== "running" && (
-    <GameOverBanner gameStatus={gameStatus} numOfGuesses={guesses.length} answer={answer}/>
+  {gameStatus === "won" && (
+    <WonBanner  numOfGuesses={guesses.length}/>
+  )}
+    {gameStatus === "lost" && (
+    <LostBanner  answer={answer}/>
   )}
   </>;
 }
