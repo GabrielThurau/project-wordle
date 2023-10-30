@@ -11,10 +11,6 @@ function GuessInput({ gameStatus, handleSubmitGuess }) {
     setTentativeGuess('');
   }
 
-  // const handleChange = (e) => {
-  //   console.log(e.target.value);
-  // }
-
   return (
 <form className="guess-input-wrapper" onSubmit={handleSubmit}>
   <label htmlFor="guess-input">Enter guess:</label>
